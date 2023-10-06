@@ -1,0 +1,1 @@
+export { default as PageNavBar } from 'components/modules/navbar/PageNavBar';
