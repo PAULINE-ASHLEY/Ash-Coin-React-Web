@@ -28,7 +28,7 @@ function Exchanges() {
   return (
     <>
       <div>
-        <div className="grid grid-cols-6 p-6 text-lg font-bold  border-y-2 border-[#EEEEEE] boder-solid text-gray-400">
+        <div className="grid grid-cols-5 p-6 text-lg font-semibold  border-y-2 border-[#EEEEEE] boder-solid text-gray-600">
           <div className="flex flex-row gap-x-4">
             <p>Name</p>
           </div>
@@ -36,7 +36,6 @@ function Exchanges() {
           <p>Volume(24Hr) </p>
           <p>Total(%)</p>
           <p>Exchange Id</p>
-          <p>Status</p>
         </div>
         {currentPosts.map((coin) => {
           return (
@@ -49,7 +48,6 @@ function Exchanges() {
                 volumeUsd={coin.volumeUsd}
                 tradingPairs={coin.tradingPairs}
                 exchangeId={coin.exchangeId}
-                socket={coin.socket}
               />
             </div>
           );

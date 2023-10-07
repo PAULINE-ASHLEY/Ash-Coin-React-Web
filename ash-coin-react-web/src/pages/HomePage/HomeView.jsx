@@ -5,7 +5,7 @@ import React from 'react';
 function HomeView() {
   return (
     <PageWrapper>
-      <div className="bg-white mx-4 py-10 rounded-xl">
+      <div className="bg-white mx-4 pb-10 pt-6 rounded-xl">
         <Coin />
       </div>
     </PageWrapper>

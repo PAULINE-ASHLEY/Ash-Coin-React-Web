@@ -1,47 +1,42 @@
 import React from 'react';
 import { ProtectedRoutes } from 'components/guards';
-import {
-	Home,
-	Crypto,
-	Nft,
-    Watchlist,
-	SignIn,
-    SignUp,
-} from 'pages';
+import { Home, Crypto, Nft, Watchlist, SignIn, SignUp, Rates } from 'pages';
 import { Route, Routes } from 'react-router-dom';
 import {
-	HOME,
-	CRYPTO,
-	NFTS,
-    WATCHLIST,
-    SIGN_IN,
-    SIGN_UP,
+  HOME,
+  CRYPTO,
+  EXCHANGES,
+  WATCHLIST,
+  SIGN_IN,
+  SIGN_UP,
+  RATES,
 } from 'navigation/constants';
 
 function RouterConfig() {
-	return (
-		<Routes>
-			{/*************************PUBLIC ROUTES************************************** */}
+  return (
+    <Routes>
+      {/*************************PUBLIC ROUTES************************************** */}
 
-			{/* List all public routes here */}
-			<Route exact path={HOME} element={<Home />} />
-			<Route path={CRYPTO} element={<Crypto />} />
-			<Route path={NFTS} element={<Nft />} />
-			<Route path={WATCHLIST} element={<Watchlist />} />
-			<Route path={SIGN_IN} element={<SignIn />} />
-			<Route path={SIGN_UP} element={<SignUp />} />
+      {/* List all public routes here */}
+      <Route exact path={HOME} element={<Home />} />
+      <Route path={CRYPTO} element={<Crypto />} />
+      <Route path={RATES} element={<Rates />} />
+      <Route path={EXCHANGES} element={<Nft />} />
+      <Route path={WATCHLIST} element={<Watchlist />} />
+      <Route path={SIGN_IN} element={<SignIn />} />
+      <Route path={SIGN_UP} element={<SignUp />} />
 
-			{/*************************PROTECTED ROUTES************************************** */}
-			<Route element={<ProtectedRoutes redirectPath={SIGN_UP} />}>
-				{/* LIST ALL PROTECTED ROUTES HERE */}
-			</Route>
+      {/*************************PROTECTED ROUTES************************************** */}
+      <Route element={<ProtectedRoutes redirectPath={SIGN_UP} />}>
+        {/* LIST ALL PROTECTED ROUTES HERE */}
+      </Route>
 
-			{/*************************404************************************** */}
+      {/*************************404************************************** */}
 
-			{/* List All 404 routes here */}
-			<Route path='*' element={<div>404 PAGE NOT FOUND</div>} />
-		</Routes>
-	);
+      {/* List All 404 routes here */}
+      <Route path="*" element={<div>404 PAGE NOT FOUND</div>} />
+    </Routes>
+  );
 }
 
 export default RouterConfig;

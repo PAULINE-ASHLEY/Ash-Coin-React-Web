@@ -28,7 +28,7 @@ function Crypto() {
   return (
     <>
       <div>
-        <div className="grid grid-cols-7 p-6 text-lg font-bold  border-y-2 border-[#EEEEEE] boder-solid">
+        <div className="grid grid-cols-6 p-6 text-lg font-semibold  border-y-2 border-[#EEEEEE] boder-solid text-gray-600">
           <div className="flex flex-row gap-x-4">
             <p>Name</p>
           </div>
@@ -36,7 +36,7 @@ function Crypto() {
           <p>Circulating Supply</p>
           <p>Volume(24Hr)</p>
           <p>Market Cap</p>
-          <p>change(24Hr)</p>
+          <p>Change(24Hr)</p>
         </div>
         {currentPosts.map((coin) => {
           return (

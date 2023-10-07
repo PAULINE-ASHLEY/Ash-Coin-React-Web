@@ -8,7 +8,7 @@ function Footer() {
       {/* Logo Section */}
       <div className="mx-10 flex flex-row items-center my-6">
         <img src={giraffe} width={60} height={60} alt={giraffe} quality={100} />
-        <p className="text-primary font-semibold text-2xl">Ash Coin</p>
+        <p className="text-primary font-semibold text-2xl">AshCoinCap</p>
       </div>
       {/* Section with links */}
       <div className="text-primary grid grid-cols-4 mx-10">
@@ -18,19 +18,16 @@ function Footer() {
           </h3>
           <div className="flex flex-col text-lg">
             <Link href="/" className="font-medium text-gray-400 mb-4">
-              Blockchain Explorer
+              Home
             </Link>
             <Link href="/" className="font-medium text-gray-400 mb-4">
-              Crypto API
+              Cryptocurrencies
             </Link>
             <Link href="/" className="font-medium text-gray-400 mb-4">
-              Crypto Indices
+              Exchanges
             </Link>
             <Link href="/" className="font-medium text-gray-400 mb-4">
-              Doodles
-            </Link>
-            <Link href="/" className="font-medium text-gray-400 mb-4">
-              Sitemap
+              Watchlist
             </Link>
           </div>
         </div>
@@ -50,18 +47,6 @@ function Footer() {
             </Link>
             <Link href="/" className="font-medium text-gray-400 mb-4">
               Cookie preferences
-            </Link>
-            <Link href="/" className="font-medium text-gray-400 mb-4">
-              Community Rules
-            </Link>
-            <Link href="/" className="font-medium text-gray-400 mb-4">
-              Disclaimer
-            </Link>
-            <Link href="/" className="font-medium text-gray-400 mb-4">
-              Methodology
-            </Link>
-            <Link href="/" className="font-medium text-gray-400 mb-4">
-              Careers
             </Link>
           </div>
         </div>
@@ -107,7 +92,7 @@ function Footer() {
       {/* Section with copyright */}
       <div className="mx-10">
         <p className="text-gray-400 font-medium my-20 text-lg">
-          © Copyright 2023 Ash Coin All rights reserved.
+          © Copyright 2023 Pauline Ondiek All rights reserved.
         </p>
       </div>
     </>

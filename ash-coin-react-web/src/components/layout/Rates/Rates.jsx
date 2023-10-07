@@ -1,14 +1,14 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-import CoinTemp from './CoinTemp';
+import RatesTemp from './RatesTemp';
 import { Link } from 'react-router-dom';
 
-function Crypto() {
+function Rates() {
   const [coins, setCoins] = useState([]);
 
   useEffect(() => {
     axios
-      .get('https://api.coincap.io/v2/assets')
+      .get('https://api.coincap.io/v2/rates')
       .then((res) => {
         setCoins(res.data.data);
       })
@@ -28,29 +28,24 @@ function Crypto() {
   return (
     <>
       <div>
-        <div className="grid grid-cols-6 p-6 text-lg font-semibold  border-y-2 border-[#EEEEEE] boder-solid text-gray-600">
+        <div className="grid grid-cols-4 p-6 text-lg font-semibold  border-y-2 border-[#EEEEEE] boder-solid text-gray-600">
           <div className="flex flex-row gap-x-4">
             <p>Name</p>
           </div>
-          <p>Price(USD)</p>
-          <p>Circulating Supply</p>
-          <p>Volume(24Hr)</p>
-          <p>Market Cap</p>
-          <p>Change(24Hr)</p>
+          <p>Currency Symbol</p>
+          <p>Type</p>
+          <p>Rate(USD)</p>
         </div>
         {currentPosts.map((coin) => {
           return (
             <div>
-              <CoinTemp
+              <RatesTemp
                 key={coin.id}
-                rank={coin.rank}
-                name={coin.name}
+                id={coin.id}
                 symbol={coin.symbol}
-                priceUsd={coin.priceUsd}
-                supply={coin.supply}
-                volumeUsd24Hr={coin.volumeUsd24Hr}
-                marketCapUsd={coin.marketCapUsd}
-                changePercent24Hr={coin.changePercent24Hr}
+                currencySymbol={coin.currencySymbol}
+                type={coin.type}
+                rateUsd={coin.rateUsd}
               />
             </div>
           );
@@ -80,4 +75,4 @@ function Crypto() {
   }
 }
 
-export default Crypto;
+export default Rates;
