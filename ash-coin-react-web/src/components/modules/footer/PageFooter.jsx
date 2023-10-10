@@ -92,7 +92,7 @@ function Footer() {
       {/* Section with copyright */}
       <div className="mx-10">
         <p className="text-gray-400 font-medium my-20 text-lg">
-          © Copyright 2023 Pauline Ondiek All rights reserved.
+          {`© Copyright ${new Date().getFullYear()} Pauline Ondiek All rights reserved.`}
         </p>
       </div>
     </>

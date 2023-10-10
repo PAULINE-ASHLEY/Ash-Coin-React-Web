@@ -23,7 +23,10 @@ const Coin = ({
           </div>
         </div>
         <p className="text-black">${Math.round(priceUsd)}</p>
-        <p>${Math.floor(supply)}</p>
+        <div className="flex flex-row gap-x-2 items-center">
+          <p>${Math.floor(supply)}</p>
+          <p className="text-gray-600 font-normal">{symbol}</p>
+        </div>
         <p className="text-black">${Math.floor(volumeUsd24Hr)}</p>
         <p>${Math.floor(marketCapUsd)}</p>
         {changePercent24Hr < 0 ? (

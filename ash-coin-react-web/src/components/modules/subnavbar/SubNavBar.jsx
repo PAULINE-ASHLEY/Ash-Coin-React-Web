@@ -39,14 +39,17 @@ function Navbar() {
               </Link>
             </li>
             <li>
-              <Link to="/" className="px-3 flex-row flex gap-x-2 text-gray-600">
+              <Link
+                to="/Watchlist"
+                className="px-3 flex-row flex gap-x-2 text-gray-600"
+              >
                 <img src={star} alt={star} />
                 Watchlist
               </Link>
             </li>
             <li>
               <Link
-                to="/"
+                to="/TopCryptocurrencies"
                 className="px-3 flex-row flex gap-x-2 items-center text-gray-600"
               >
                 <img src={fire} alt={fire} width={40} />
@@ -55,7 +58,7 @@ function Navbar() {
             </li>
             <li>
               <Link
-                to="/"
+                to="/TopExchanges"
                 className="px-3 flex-row flex gap-x-2 items-center text-gray-600"
               >
                 <img src={fire} alt={fire} width={40} />

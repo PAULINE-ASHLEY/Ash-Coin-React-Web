@@ -1,6 +1,8 @@
 export const HOME = '/';
 export const CRYPTO = '/Cryptocurrencies';
+export const TOP_CRYPTO = '/TopCryptocurrencies';
 export const EXCHANGES = '/Exchanges';
+export const TOP_EXCHANGES = '/TopExchanges';
 export const RATES = '/Rates';
 export const WATCHLIST = '/Watchlist';
 export const SIGN_IN = '/SignIn';

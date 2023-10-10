@@ -36,13 +36,13 @@ function Navbar() {
               </Link>
             </li>
             <li>
-              <Link to="/" className="py-7 px-3 inline-block">
+              <Link to="/Watchlist" className="py-7 px-3 inline-block">
                 Watchlist
               </Link>
             </li>
             <li>
               <Link
-                to="/"
+                to="/TopCryptocurrencies"
                 className="px-3 flex-row flex gap-x-2 items-center text-black"
               >
                 <img src={fire} alt={fire} width={40} />

@@ -2,7 +2,6 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { PageNavBar } from 'components/modules/navbar';
 import { PageFooter } from 'components/modules/footer';
-import { SubNavBar } from '../subnavbar';
 
 function PageWrapper({ children }) {
   return (
@@ -11,7 +10,6 @@ function PageWrapper({ children }) {
         <PageNavBar />
       </div>
       <main>
-        <SubNavBar />
         <div className="min-h-[75vh] box-border w-full">{children}</div>
       </main>
       <div className="border-t-2 border-solid border-grey">
