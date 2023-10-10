@@ -4,6 +4,7 @@ import CoinTemp from './CoinTemp';
 import { Link } from 'react-router-dom';
 
 function Crypto() {
+  // const [data] = useFetch('https://api.coincap.io/v2/assets');
   const [coins, setCoins] = useState([]);
 
   useEffect(() => {
