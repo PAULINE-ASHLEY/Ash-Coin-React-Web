@@ -1,27 +1,11 @@
-import React, { useState, useEffect } from 'react';
-import axios from 'axios';
-import CryptoTemp from './CryptoTemp';
+import React from 'react';
+import { useSelector, useDispatch } from 'react-redux';
+import { green, red } from 'assets/images';
+import { addToCart } from 'features/cartSlice';
 
 function Crypto() {
-  const [coins, setCoins] = useState([]);
-
-  useEffect(() => {
-    axios
-      .get('https://api.coincap.io/v2/assets')
-      .then((res) => {
-        setCoins(res.data.data);
-      })
-      .catch((error) => console.log(error));
-  }, []);
-
-  const currentPage = 1;
-  const postsPerPage = 30;
-
-  // Get current posts
-  const indexOfLastPost = currentPage * postsPerPage;
-  const indexOfFirstPost = indexOfLastPost - postsPerPage;
-  const currentPosts = coins.slice(indexOfFirstPost, indexOfLastPost);
-
+  const coin = useSelector((state) => state.allCart.items);
+  const dispatch = useDispatch();
   return (
     <>
       <div>
@@ -35,20 +19,42 @@ function Crypto() {
           <p>Market Cap</p>
           <p>Change(24Hr)</p>
         </div>
-        {currentPosts.map((coin) => {
+        {coin.map((coin, id) => {
           return (
-            <div>
-              <CryptoTemp
-                key={coin.id}
-                rank={coin.rank}
-                name={coin.name}
-                symbol={coin.symbol}
-                priceUsd={coin.priceUsd}
-                supply={coin.supply}
-                volumeUsd24Hr={coin.volumeUsd24Hr}
-                marketCapUsd={coin.marketCapUsd}
-                changePercent24Hr={coin.changePercent24Hr}
-              />
+            <div key={id}>
+              <div className="grid grid-cols-6 p-6 text-xl border-b-2 border-[#EEEEEE] boder-solid font-medium items-center">
+                <div className="flex flex-row gap-x-4 items-center">
+                  <p className="text-gray-600">{coin.rank}.</p>
+                  <div>
+                    <button
+                      className="px-4 py-2 text-lg bg-black rounded-xl text-white mt-4 font-semibold"
+                      onClick={() => dispatch(addToCart(coin))}
+                    >
+                      ADD TO CART
+                    </button>
+                    <h1 className="text-black">{coin.name}</h1>
+                    <p className="text-gray-600 font-normal">{coin.symbol}</p>
+                  </div>
+                </div>
+                <p className="text-black">${Math.round(coin.priceUsd)}</p>
+                <div className="flex flex-row gap-x-2 items-center">
+                  <p>${Math.floor(coin.supply)}</p>
+                  <p className="text-gray-600 font-normal">{coin.symbol}</p>
+                </div>
+                <p className="text-black">${Math.floor(coin.volumeUsd24Hr)}</p>
+                <p>${Math.floor(coin.marketCapUsd)}</p>
+                {coin.changePercent24Hr < 0 ? (
+                  <p className="text-red-600 flex flex-row">
+                    <img src={red} alt={red} />
+                    {coin.changePercent24Hr}%
+                  </p>
+                ) : (
+                  <p className="text-green-600 flex flex-row">
+                    <img src={green} alt={green} />
+                    {coin.changePercent24Hr}%
+                  </p>
+                )}
+              </div>
             </div>
           );
         })}

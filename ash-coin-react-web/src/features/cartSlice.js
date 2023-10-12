@@ -1,8 +1,16 @@
-import { createSlice } from '@reduxjs/toolkit';
+import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
+import axios from 'axios';
+
+export const fetchCryptoList = createAsyncThunk(
+  axios
+    .get('https://api.coincap.io/v2/assets')
+    .then((res) => res.data)
+    .catch((error) => error)
+);
 
 const initialState = {
   cart: [],
-  items: '',
+  items: fetchCryptoList,
   totalQuantity: 0,
   totalPrice: 0,
 };

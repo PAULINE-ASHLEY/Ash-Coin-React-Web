@@ -1,8 +1,16 @@
 import { grid, list, star, line, currency, fire } from 'assets/images';
-import React from 'react';
+import React, { useEffect } from 'react';
 import { Link } from 'react-router-dom';
+import { useDispatch, useSelector } from 'react-redux';
+import { getCartTotal } from 'features/cartSlice';
 
 function Navbar() {
+  const { cart, totalQuantity } = useSelector((state) => state.allCart);
+
+  const dispatch = useDispatch();
+  useEffect(() => {
+    dispatch(getCartTotal());
+  }, [dispatch, cart]);
   return (
     <>
       <div className="flex flex-row pt-10 ml-6">
@@ -44,7 +52,10 @@ function Navbar() {
                 className="px-3 flex-row flex gap-x-2 text-gray-600"
               >
                 <img src={star} alt={star} />
-                Watchlist
+                Watchlist{' '}
+                <sup className="text-2xl bg-black text-white font-extrabold rounded-full px-2">
+                  {totalQuantity}
+                </sup>
               </Link>
             </li>
             <li>

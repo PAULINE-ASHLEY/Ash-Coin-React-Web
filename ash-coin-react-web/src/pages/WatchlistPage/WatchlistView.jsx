@@ -1,3 +1,4 @@
+import Watchlist from 'components/layout/Watchlist/Watchlist';
 import { SubNavBar } from 'components/modules/subnavbar';
 import { PageWrapper } from 'components/modules/wrapper';
 import React from 'react';
@@ -12,6 +13,7 @@ function WatchlistView() {
         <div className="mb-6">
           <SubNavBar />
         </div>
+        <Watchlist />
       </div>
     </PageWrapper>
   );
