@@ -7,7 +7,7 @@ function WatchlistView() {
   return (
     <PageWrapper>
       <div className="bg-white mx-4 py-10 rounded-xl">
-        <h1 className="text-3xl text-black font-bold mx-6 my-10">
+        <h1 className="text-2xl text-black font-bold mx-6 my-6">
             You're Cryptocurrency Watchlist
         </h1>
         <div className="mb-6">

@@ -16,7 +16,7 @@ function Watchlist() {
   return (
     <>
       <div>
-        <div className="grid grid-cols-6 p-6 text-lg font-semibold  border-y-2 border-[#EEEEEE] boder-solid text-gray-600">
+        <div className="grid grid-cols-6 p-6 text-sm font-semibold  border-y-2 border-[#EEEEEE] boder-solid text-gray-600">
           <div className="flex flex-row gap-x-4">
             <p>Name</p>
           </div>
@@ -28,7 +28,7 @@ function Watchlist() {
         </div>
         {cart?.map((coin) => {
           return (
-            <div className="grid grid-cols-6 p-6 text-xl border-b-2 border-[#EEEEEE] boder-solid font-medium items-center">
+            <div className="grid grid-cols-6 p-6 text-sm border-b-2 border-[#EEEEEE] boder-solid font-medium items-center">
               <div className="flex flex-row gap-x-4 items-center">
                 <p className="text-gray-600">{coin.rank}.</p>
                 <div>

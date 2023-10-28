@@ -28,7 +28,7 @@ function Exchanges() {
   return (
     <>
       <div>
-        <div className="grid grid-cols-5 p-6 text-lg font-semibold  border-y-2 border-[#EEEEEE] boder-solid text-gray-600">
+        <div className="grid grid-cols-5 p-6 text-sm font-semibold  border-y-2 border-[#EEEEEE] boder-solid text-gray-600">
           <div className="flex flex-row gap-x-4">
             <p>Name</p>
           </div>

@@ -7,7 +7,7 @@ function NftView() {
   return (
     <PageWrapper>
       <div className="bg-white mx-4 py-10 rounded-xl">
-      <h1 className="text-3xl text-black font-bold mx-6 my-10">
+      <h1 className="text-2xl text-black font-bold mx-6 my-6">
           Today's Exchanges Prices by Trading Pairs
         </h1>
         <div className="mb-6">

@@ -10,7 +10,7 @@ const Exchange = ({
 }) => {
   return (
     <>
-      <div className="grid grid-cols-5 p-6 text-xl border-b-2 border-[#EEEEEE] boder-solid font-medium items-center">
+      <div className="grid grid-cols-5 p-6 text-sm border-b-2 border-[#EEEEEE] boder-solid font-medium items-center">
         <div className="flex flex-row gap-x-4 items-center">
           <p className="text-gray-600">{rank}.</p>
           <h1 className="text-black">{name}</h1>

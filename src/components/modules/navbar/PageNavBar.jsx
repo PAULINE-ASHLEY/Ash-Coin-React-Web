@@ -1,13 +1,21 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { fire, giraffe } from 'assets/images';
 import { Link } from 'react-router-dom';
+import { useDispatch, useSelector } from 'react-redux';
+import { getCartTotal } from 'features/cartSlice';
 
 function Navbar() {
+  const { cart, totalQuantity } = useSelector((state) => state.allCart);
+
+  const dispatch = useDispatch();
+  useEffect(() => {
+    dispatch(getCartTotal());
+  }, [dispatch, cart]);
   return (
     <>
-      <div className="grid grid-cols-2 mx-10">
+      <div className="flex mx-10">
         {/* Logo Section */}
-        <div className="flex flex-row items-center my-4">
+        <div className="flex flex-row items-center my-4 w-[30%]">
           <img
             src={giraffe}
             width={40}
@@ -15,11 +23,11 @@ function Navbar() {
             alt={giraffe}
             quality={100}
           />
-          <p className="text-primary font-semibold text-2xl">AshCoinCap</p>
+          <p className="text-primary font-semibold text-base">AshCoinCap</p>
         </div>
         {/* Other section */}
-        <div className="flex flex-row-reverse gap-x-4">
-          <ul className="md:flex hidden items-center gap-4 text-xl font-semibold">
+        <div className="flex flex-row-reverse gap-x-4 w-[70%]">
+          <ul className="md:flex hidden items-center text-sm font-semibold">
             <li>
               <Link to="/" className="py-7 px-3 inline-block">
                 Home
@@ -38,6 +46,9 @@ function Navbar() {
             <li>
               <Link to="/Watchlist" className="py-7 px-3 inline-block">
                 Watchlist
+                <sup className="text-base bg-black text-white font-extrabold rounded-full px-2">
+                  {totalQuantity}
+                </sup>
               </Link>
             </li>
             <li>

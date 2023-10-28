@@ -14,7 +14,7 @@ const Coin = ({
 }) => {
   return (
     <>
-      <div className="grid grid-cols-6 p-6 text-xl border-b-2 border-[#EEEEEE] boder-solid font-medium items-center">
+      <div className="grid grid-cols-6 p-6 text-sm border-b-2 border-[#EEEEEE] boder-solid font-medium items-center">
         <div className="flex flex-row gap-x-4 items-center">
           <p className="text-gray-600">{rank}.</p>
           <div>
@@ -30,12 +30,12 @@ const Coin = ({
         <p className="text-black">${Math.floor(volumeUsd24Hr)}</p>
         <p>${Math.floor(marketCapUsd)}</p>
         {changePercent24Hr < 0 ? (
-          <p className="text-red-600 flex flex-row">
+          <p className="text-red-600 flex flex-row items-center">
             <img src={red} alt={red} />
             {changePercent24Hr}%
           </p>
         ) : (
-          <p className="text-green-600 flex flex-row">
+          <p className="text-green-600 flex flex-row items-center">
             <img src={green} alt={green} />
             {changePercent24Hr}%
           </p>

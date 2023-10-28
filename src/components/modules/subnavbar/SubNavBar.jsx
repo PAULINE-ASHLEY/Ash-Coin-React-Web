@@ -15,7 +15,7 @@ function Navbar() {
     <>
       <div className="flex flex-row pt-10 ml-6">
         <div>
-          <ul className="md:flex hidden items-center text-xl font-semibold">
+          <ul className="md:flex hidden items-center text-sm font-semibold">
             <li>
               <Link
                 to="/Cryptocurrencies"
@@ -53,7 +53,7 @@ function Navbar() {
               >
                 <img src={star} alt={star} />
                 Watchlist{' '}
-                <sup className="text-2xl bg-black text-white font-extrabold rounded-full px-2">
+                <sup className="text-base bg-black text-white font-extrabold rounded-full px-2">
                   {totalQuantity}
                 </sup>
               </Link>
